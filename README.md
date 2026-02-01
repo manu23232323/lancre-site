@@ -10,7 +10,9 @@ Site vitrine pour L'Ancre, agence de sprints digitaux locaux basée à Vaux-le-M
 
 ## Déploiement
 
-Le site est déployé automatiquement sur Netlify à chaque push sur la branche `main`.
+✅ **Site déployé automatiquement sur Netlify depuis GitHub**
+
+Le site se redéploie automatiquement à chaque push sur la branche `main`.
 
 ### Netlify Forms
 
@@ -22,10 +24,17 @@ Les soumissions sont visibles dans le dashboard Netlify : **Site settings > Form
 - `index.html` - Page unique avec toutes les sections
 - `netlify.toml` - Configuration Netlify
 
-## Domaine
+## URLs
 
-- Production : https://l-ancre.fr
-- Netlify : https://lancre.netlify.app
+- Production : https://l-ancre.fr (à configurer)
+- Netlify : https://prismatic-alfajores-62b748.netlify.app
+- GitHub : https://github.com/manu23232323/lancre-site
+
+## Test de déploiement automatique
+
+✅ **Modification effectuée le 01/02/2026 à 21:45**
+
+Ce changement devrait déclencher un déploiement automatique sur Netlify.
 
 ---
 

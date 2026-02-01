@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Ancre — Votre fiche Google vous fait perdre des clients chaque jour</title>
+    <meta name="description" content="90% des fiches Google Business sont mal configurées. Résultat : vous perdez des appels, des itinéraires, des ventes. On corrige ça en 7 jours. Dès 1 490€.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #0A2540;
+            --navy-light: #1E5A8E;
+            --orange: #FF6B35;
+            --orange-dark: #E85A2A;
+            --green: #10B981;
+            --red: #EF4444;
+            --bg: #FAFBFC;
+            --text: #0F1419;
+            --text-muted: #536471;
+            --border: #E1E8ED;
+            
+            --font-display: 'Archivo Black', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-cta {
+            padding: 0.75rem 1.75rem;
+            background: var(--orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--orange-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 120px 2rem 80px;
+            background: linear-gradient(135deg, #0A2540 0%, #1E5A8E 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.1); opacity: 0.15; }
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-warning {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #FEE2E2;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-highlight {
+            color: var(--orange);
+        }
+
+        .hero-subtitle {
+            font-size: 1.375rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 700px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--orange);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9375rem;
+            opacity: 0.8;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 1.0625rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+            box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--orange-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--navy);
+        }
+
+        .btn-secondary:hover {
+            background: #F5F5F5;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--navy);
+            color: white;
+        }
+
+        /* GMB Comparison */
+        .gmb-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gmb-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .gmb-card-header {
+            padding: 1rem;
+            font-weight: 700;
+            text-align: center;
+            font-size: 1.125rem;
+        }
+
+        .gmb-card.before .gmb-card-header {
+            background: #FEE2E2;
+            color: var(--red);
+        }
+
+        .gmb-card.after .gmb-card-header {
+            background: #D1FAE5;
+            color: var(--green);
+        }
+
+        .gmb-card-body {
+            padding: 1.5rem;
+            background: white;
+            color: var(--text);
+        }
+
+        .gmb-mockup {
+            background: #F9FAFB;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .gmb-metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .gmb-metric:last-child {
+            border-bottom: none;
+        }
+
+        .gmb-metric-label {
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+        }
+
+        .gmb-metric-value {
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .gmb-metric-value.bad {
+            color: var(--red);
+        }
+
+        .gmb-metric-value.good {
+            color: var(--green);
+        }
+
+
+        /* Avant/Après Section */
+        .avant-apres {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .avant-apres-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .avant-apres-summary {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+            border-radius: 16px;
+            border: 2px solid #FCD34D;
+        }
+
+        .summary-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .summary-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+
+        .summary-text strong {
+            display: block;
+            font-size: 1.375rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-text p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .problem-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            text-align: center;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            line-height: 1.7;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .problem-card:hover {
+            border-color: var(--red);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(239, 68, 68, 0.15);
+        }
+
+        .problem-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--red);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .problem-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .problem-cost {
+            font-weight: 700;
+            color: var(--red);
+            font-size: 1.125rem;
+        }
+
+        /* GMB Educational Section */
+        .gmb-education {
+            padding: 80px 2rem;
+            background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gmb-education::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 20s ease-in-out infinite;
+        }
+
+        .gmb-education-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .education-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .education-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .education-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .education-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .education-content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 3rem;
+        }
+
+        .education-stat-highlight {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-highlight-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-big {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--orange);
+            line-height: 1;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+        }
+
+        .stat-desc {
+            font-size: 1rem;
+            line-height: 1.5;
+            opacity: 0.95;
+        }
+
+        .benefits-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 1.75rem;
+            display: flex;
+            gap: 1.25rem;
+            transition: all 0.3s;
+        }
+
+        .benefit-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--orange);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .benefit-text {
+            flex: 1;
+        }
+
+        .benefit-text strong {
+            display: block;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--orange);
+        }
+
+        .benefit-text p {
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .education-cta {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .education-cta-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-cta-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        .education-cta-content p {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Solution Process */
+        .solution {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .solution-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .process-step {
+            position: relative;
+            text-align: center;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: var(--border);
+            z-index: 0;
+        }
+
+        .process-step:last-child::before {
+            display: none;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--orange);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Sprints/Offres */
+        .offres {
+            padding: 80px 2rem;
+            background: var(--bg);
+        }
+
+        .offres-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .offres-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .offre-card {
+            background: white;
+            border: 3px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .offre-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(255, 107, 53, 0.2);
+        }
+
+        .offre-card.featured {
+            border-color: var(--orange);
+            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.15);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            right: 2rem;
+            background: var(--orange);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .offre-name {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .offre-tagline {
+            color: var(--text-muted);
+            font-size: 1.0625rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .offre-price {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .offre-price-detail {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        .offre-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex: 1;
+        }
+
+        .offre-features li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .offre-features li:last-child {
+            border-bottom: none;
+        }
+
+        .offre-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .offre-delivery {
+            background: #FEF3C7;
+            border: 1px solid #FCD34D;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: #92400E;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 2rem;
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-guarantee {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        .cta-guarantee h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Contact Form */
+        .contact {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--bg);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 2px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--orange);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .gmb-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .process-timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step::before {
+                display: none;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .before-after-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ba-arrow {
+                transform: rotate(90deg);
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .before-after-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .roi-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 100px 1.5rem 60px;
+            }
+
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .offres-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .before-after-container {
+                padding: 1.5rem;
+            }
+
+            .ba-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">⚓ L'ANCRE</div>
+            <a href="#contact" class="nav-cta">Démarrer maintenant</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-warning">
+                ⚠️ 90% des fiches Google Business sont mal configurées
+            </div>
+            <h1 class="hero-title">
+                Votre fiche Google vous fait perdre<br>
+                <span class="hero-highlight">des clients chaque jour</span>
+            </h1>
+            <p class="hero-subtitle">
+                Fiche incomplete, avis non gérés, tracking absent : vous laissez de l'argent sur la table. 
+                On installe un système qui transforme votre visibilité locale en demandes mesurables. En 7 jours. Dès 1 490€.
+            </p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">3-5x</div>
+                    <div class="hero-stat-label">Plus d'appels en 30 jours</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">7j</div>
+                    <div class="hero-stat-label">Installation complète</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">100%</div>
+                    <div class="hero-stat-label">Mesurable & tracké</div>
+                </div>
+            </div>
+
+            <div class="hero-cta-group">
+                <a href="#offres" class="btn btn-primary">Voir les formules (dès 1 490€)</a>
+                <a href="#contact" class="btn btn-secondary">Démarrer maintenant</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="problem-container">
+            <div class="section-label">Le problème</div>
+            <h2 class="section-title">Vous perdez de l'argent sans le savoir</h2>
+            <p class="section-subtitle">
+                Chaque jour, des clients potentiels cherchent vos services sur Google. 
+                Mais si votre fiche est mal configurée, ils passent à la concurrence.
+            </p>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">📉</div>
+                    <h3>Fiche incomplète</h3>
+                    <p>Catégories floues, horaires manquants, photos de mauvaise qualité. Google ne vous met pas en avant.</p>
+                    <div class="problem-cost">Coût : -60% de visibilité</div>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">⭐</div>
+                    <h3>Avis non gérés</h3>
+                    <p>Avis négatifs sans réponse, pas de système pour collecter les bons avis. Votre note stagne ou baisse.</p>
+                    <div class="problem-cost">Coût : -40% de confiance</div>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <h3>Zéro tracking</h3>
+                    <p>Vous ne savez pas combien de personnes appellent, cliquent, viennent via Google. Impossible de mesurer le ROI.</p>
+                    <div class="problem-cost">Coût : argent gaspillé</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avant/Après Section -->
+    <section class="avant-apres">
+        <div class="avant-apres-container">
+            <div class="section-label">La preuve en chiffres</div>
+            <h2 class="section-title">Avant / Après : Résultats mesurables</h2>
+            <p class="section-subtitle">
+                Voici ce qui se passe quand on optimise correctement une fiche Google Business. 
+                Chiffres réels, mesurés sur 30 jours après installation.
+            </p>
+
+            <div class="gmb-comparison">
+                <div class="gmb-card before">
+                    <div class="gmb-card-header">❌ AVANT (fiche typique)</div>
+                    <div class="gmb-card-body">
+                        <div class="gmb-mockup">
+                            <strong>🔍 Fiche Google Business</strong><br>
+                            <span style="font-size: 0.875rem; color: #9CA3AF;">Catégorie floue • 3 photos • Horaires incomplets • 12 avis (4.1★)</span>
+                        </div>
+                        <div class="gmb-metric">
+                            <span class="gmb-metric-label">Appels/mois</span>
+                            <span class="gmb-metric-value bad">8</span>
+                        </div>
+                        <div class="gmb-metric">
+                            <span class="gmb-metric-label">Demandes d'itinéraire</span>
+                            <span class="gmb-metric-value bad">15</span>
+                        </div>
+                        <div class="gmb-metric">
+                            <span class="gmb-metric-label">Clics site web</span>
+                            <span class="gmb-metric-value bad">22</span>
+                        </div>
+                        <div class="gmb-metric">
+                            <span class="gmb-metric-label">Taux de réponse avis</span>
+                            <span class="gmb-metric-value bad">25%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gmb-card after">
+                    <div class="gmb-card-header">✅ APRÈS (optimisation L'Ancre)</div>
+                    <div class="gmb-card-body">
+                        <div class="gmb-mockup">
+                            <strong>🔍 Fiche Google Business</strong><br>
+                            <span style="font-size: 0.875rem; color: #10B981;">Catégories précises • 30+ photos • Infos complètes • 45 avis (4.7★)</span>
+                        </div>
+                        <div class="gmb-metric">
+                            <span class="gmb-metric-label">Appels/mois</span>
+                            <span class="gmb-metric-value good">34 <small style="font-size:0.875rem;">(+325%)</small></span>
+                        </div>
+                        <div class="gmb-metric">
+                            <span class="gmb-metric-label">Demandes d'itinéraire</span>
+                            <span class="gmb-metric-value good">62 <small style="font-size:0.875rem;">(+313%)</small></span>
+                        </div>
+                        <div class="gmb-metric">
+                            <span class="gmb-metric-label">Clics site web</span>
+                            <span class="gmb-metric-value good">89 <small style="font-size:0.875rem;">(+304%)</small></span>
+                        </div>
+                        <div class="gmb-metric">
+                            <span class="gmb-metric-label">Taux de réponse avis</span>
+                            <span class="gmb-metric-value good">100%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="avant-apres-summary">
+                <div class="summary-item">
+                    <div class="summary-icon">📞</div>
+                    <div class="summary-text">
+                        <strong>+325% d'appels</strong>
+                        <p>De 8 à 34 appels/mois = 26 opportunités supplémentaires</p>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon">🗺️</div>
+                    <div class="summary-text">
+                        <strong>+313% d'itinéraires</strong>
+                        <p>De 15 à 62 demandes/mois = 47 visites potentielles en plus</p>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon">💰</div>
+                    <div class="summary-text">
+                        <strong>ROI mesurable</strong>
+                        <p>Chaque métrique trackée en temps réel. Vous voyez l'impact jour par jour</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Offres -->
+
+    <!-- GMB Educational Section -->
+    <section class="gmb-education">
+        <div class="gmb-education-container">
+            <div class="education-header">
+                <div class="education-icon">📊</div>
+                <h2 class="education-title">Pourquoi Google Business Profile est votre priorité #1</h2>
+                <p class="education-subtitle">
+                    Google domine 92% des recherches en France. Si votre fiche n'est pas optimisée, vous perdez des clients chaque jour.
+                </p>
+            </div>
+
+            <div class="education-content">
+                <div class="education-stat-highlight">
+                    <div class="stat-highlight-item">
+                        <div class="stat-big">76%</div>
+                        <div class="stat-desc">des recherches locales aboutissent à une visite en magasin sous 24h</div>
+                    </div>
+                    <div class="stat-highlight-item">
+                        <div class="stat-big">93%</div>
+                        <div class="stat-desc">des décisions d'achat commencent par une recherche Google</div>
+                    </div>
+                    <div class="stat-highlight-item">
+                        <div class="stat-big">7x</div>
+                        <div class="stat-desc">plus de chances d'attirer un client avec une fiche optimisée</div>
+                    </div>
+                </div>
+
+                <div class="education-benefits">
+                    <h3 class="benefits-title">Les 12 avantages concrets d'une fiche Google Business optimisée :</h3>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🎯</div>
+                            <div class="benefit-text">
+                                <strong>Visibilité locale instantanée</strong>
+                                <p>Apparaissez dans le "Local Pack" (les 3 premiers résultats) quand vos clients cherchent vos services à proximité</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📞</div>
+                            <div class="benefit-text">
+                                <strong>Appels directs trackables</strong>
+                                <p>Bouton "Appeler" cliquable sur mobile. En moyenne +150% d'appels téléphoniques avec une fiche bien configurée</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🗺️</div>
+                            <div class="benefit-text">
+                                <strong>Itinéraires GPS automatiques</strong>
+                                <p>Les clients trouvent votre emplacement en 1 clic. 50% des recherches mobiles aboutissent à une visite sous 24h</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">⭐</div>
+                            <div class="benefit-text">
+                                <strong>Crédibilité via les avis</strong>
+                                <p>88% des consommateurs font autant confiance aux avis en ligne qu'aux recommandations personnelles</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📸</div>
+                            <div class="benefit-text">
+                                <strong>Photos qui convertissent</strong>
+                                <p>Les entreprises avec photos reçoivent 42% plus de demandes d'itinéraires et 35% plus de clics vers leur site</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💬</div>
+                            <div class="benefit-text">
+                                <strong>Questions-réponses clients</strong>
+                                <p>Section FAQ automatique où vous pouvez anticiper les objections et rassurer avant même le premier contact</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📊</div>
+                            <div class="benefit-text">
+                                <strong>Statistiques détaillées</strong>
+                                <p>Sachez exactement combien de personnes vous trouvent, appellent, demandent un itinéraire. ROI mesurable en temps réel</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🆓</div>
+                            <div class="benefit-text">
+                                <strong>100% gratuit (Google Ads optionnel)</strong>
+                                <p>Contrairement aux pubs payantes, votre fiche optimisée travaille pour vous 24/7 sans budget publicitaire</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🏆</div>
+                            <div class="benefit-text">
+                                <strong>Avantage concurrentiel immédiat</strong>
+                                <p>Seulement 25% des entreprises optimisent vraiment leur fiche. Vous prenez une longueur d'avance massive</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📅</div>
+                            <div class="benefit-text">
+                                <strong>Prise de RDV intégrée</strong>
+                                <p>Connectez votre agenda (Calendly, Doctolib, etc.) pour que les clients réservent en 2 clics depuis Google</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📢</div>
+                            <div class="benefit-text">
+                                <strong>Posts et actualités</strong>
+                                <p>Communiquez vos offres, événements, nouveautés directement dans les résultats Google (comme un mini-réseau social)</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🔍</div>
+                            <div class="benefit-text">
+                                <strong>SEO local boosté</strong>
+                                <p>Une fiche optimisée améliore votre référencement local global. Vous remontez aussi dans les résultats organiques classiques</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-cta">
+                    <div class="education-cta-content">
+                        <h3>La réalité du terrain</h3>
+                        <p>90% des fiches Google Business sont incomplètes ou mal configurées. Vos concurrents laissent de l'argent sur la table. Pendant qu'ils dorment, vous installez un système qui transforme la visibilité locale en demandes mesurables.</p>
+                        <a href="#offres" class="btn btn-primary" style="margin-top: 1.5rem;">Voir comment on installe tout ça (dès 1 490€)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offres" id="offres">
+        <div class="offres-container">
+            <div class="section-label">Les formules</div>
+            <h2 class="section-title">Choisissez votre sprint</h2>
+            <p class="section-subtitle">
+                Installation complète en 7-10 jours. Prix fixes. Livrables concrets. Care plan pour entretenir la machine.
+            </p>
+
+            <div class="offres-grid">
+                <!-- Starter -->
+                <div class="offre-card">
+                    <h3 class="offre-name">STARTER</h3>
+                    <p class="offre-tagline">Local Demand Sprint</p>
+                    <div class="offre-price">1 490€</div>
+                    <div class="offre-price-detail">Installation one-shot</div>
+                    <div class="offre-delivery">⚡ Livraison : 7-10 jours</div>
+                    <ul class="offre-features">
+                        <li>Audit + baseline (captures avant)</li>
+                        <li>Optimisation complète Google Business Profile</li>
+                        <li>Page conversion + tracking UTM</li>
+                        <li>Événements trackés (appel, itinéraire, formulaire)</li>
+                        <li>Kit avis : QR code, scripts, templates réponses</li>
+                        <li>Rapport 1 page : checklist fait/pas fait</li>
+                        <li><strong>Care plan : 250€/mois</strong> (optionnel)</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%; text-align: center;">Démarrer maintenant</a>
+                </div>
+
+                <!-- Boost (Featured) -->
+                <div class="offre-card featured">
+                    <div class="featured-badge">⭐ Recommandé</div>
+                    <h3 class="offre-name">BOOST</h3>
+                    <p class="offre-tagline">Starter + Réputation Propre</p>
+                    <div class="offre-price">1 990€</div>
+                    <div class="offre-price-detail">Installation one-shot</div>
+                    <div class="offre-delivery">⚡ Livraison : 7-10 jours</div>
+                    <ul class="offre-features">
+                        <li><strong>Tout le sprint Starter inclus</strong></li>
+                        <li>+ Process demande d'avis (timing, qui, comment)</li>
+                        <li>+ QR codes + scripts SMS/email automatisés</li>
+                        <li>+ Templates réponses (positifs/neutres/négatifs)</li>
+                        <li>+ Mise en avant avis sur site/landing</li>
+                        <li>+ Tableau pilotage : avis/mois, note, délai réponse</li>
+                        <li><strong>Care plan : 300€/mois</strong> (optionnel)</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">Démarrer maintenant</a>
+                </div>
+
+                <!-- Pro -->
+                <div class="offre-card">
+                    <h3 class="offre-name">PRO</h3>
+                    <p class="offre-tagline">Écosystème local complet</p>
+                    <div class="offre-price">2 590€</div>
+                    <div class="offre-price-detail">Installation one-shot</div>
+                    <div class="offre-delivery">⚡ Livraison : 10-14 jours</div>
+                    <ul class="offre-features">
+                        <li><strong>Tout le sprint Boost inclus</strong></li>
+                        <li>+ Politique RDV (annulation, délai, acompte)</li>
+                        <li>+ Séquence rappels automatiques (J-2/J-1/H-3)</li>
+                        <li>+ Script rebooking (annulations + no-show)</li>
+                        <li>+ Page "infos RDV" (où venir, quoi apporter)</li>
+                        <li>+ Dashboard no-show rate + taux rebooking</li>
+                        <li><strong>Care plan : 350€/mois</strong> (optionnel)</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%; text-align: center;">Démarrer maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Prêt à transformer votre fiche Google en machine à clients ?</h2>
+            <p>On commence dès demain. Vous choisissez votre formule, on installe tout en 7 jours, vous voyez les résultats monter en temps réel.</p>
+            <a href="#contact" class="btn btn-primary" style="background: white; color: var(--orange); font-size: 1.125rem;">Démarrer maintenant (dès 1 490€)</a>
+
+            <div class="cta-guarantee">
+                <h3>✓ Garantie résultats mesurés</h3>
+                <p style="margin: 0; opacity: 0.95;">On installe le tracking dès le jour 1. Vous voyez les métriques monter en temps réel : appels, itinéraires, clics. Si vous ne voyez pas la différence après 30 jours, on ne vous facture pas le care plan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-label">Démarrer</div>
+            <h2 class="section-title">Lancez votre sprint maintenant</h2>
+            <p class="section-subtitle">Remplissez le formulaire, on vous recontacte sous 24h pour lancer l'audit et démarrer l'installation.</p>
+
+            <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <!-- Honeypot anti-spam (hidden) -->
+                <p style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+
+                <div class="form-group">
+                    <label for="name">Votre nom *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email professionnel *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="business">Nom de votre entreprise *</label>
+                    <input type="text" id="business" name="business" required>
+                </div>
+                <div class="form-group">
+                    <label for="formula">Formule souhaitée *</label>
+                    <select id="formula" name="formula" required style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-family: var(--font-body); font-size: 1rem;">
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="starter">Starter - 1 490€</option>
+                        <option value="boost">Boost - 1 990€ (recommandé)</option>
+                        <option value="pro">Pro - 2 590€</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Parlez-nous rapidement de votre activité (optionnel)</label>
+                    <textarea id="message" name="message" placeholder="Ex : Garage automobile à Grenoble, 15 ans d'activité, besoin de plus de clients locaux..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.125rem;">Démarrer mon sprint maintenant</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="logo" style="margin-bottom: 1rem; justify-content: center;">⚓ L'ANCRE</div>
+            <p>Sprints digitaux locaux • Vaux-le-Milieu, Isère</p>
+            <p style="margin-top: 2rem; font-size: 0.875rem;">&copy; 2025 L'Ancre — SAS Yuki. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData);
+                    
+                    console.log('Sprint demandé:', data);
+                    
+                    const button = form.querySelector('button[type="submit"]');
+                    const originalText = button.textContent;
+                    
+                    button.textContent = '✓ Demande envoyée ! On vous contacte sous 24h';
+                    button.style.background = '#10B981';
+                    
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.style.background = '';
+                    }, 5000);
+                });
+            }
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
